@@ -1,5 +1,5 @@
 # libune
-A simple Integrated Library System (ILS) for Low Resourses Schools in Laravel
+A simple Integrated Library System (ILS) for low resourses schools in Laravel
 
 ## Getting Started
 Libune is a web aplication for the management of a school library. The administrators of the library can borrow books to students and teachers of the institution with the help of a mobile device. In addition, book registration can be facilitated with the use of a scanner app and the printing of the necessary codes for the books.
