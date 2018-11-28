@@ -17,8 +17,8 @@ class CreateBooksTable extends Migration
             $table->increments('id');            
             $table->string('titulo');
             $table->string('autor');
-            $table->unsignedInteger('cantidad');
             $table->string('seccion');
+            $table->unsignedInteger('ejemplar');
             $table->string('estado');
             $table->string('codigo',10);
             $table->year('edicion');
