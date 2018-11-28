@@ -33,7 +33,11 @@
                                   <a class="btn btn-sm btn-primary" href="{{ route('book.show', $book->id) }}">{{ $book->id }}</a>
                                 </td>
                                 <td>{{ $book->titulo }}</td>
-                                <td>{{ $book->autor }}</td>
+                                    <ul>
+                                        @foreach($book->autores as $autor)
+                                            <li>{{ $autor->apellido, $autor->nombre}}</li>
+                                        @endforeach
+                                    </ul>
                                 <td>{{ $book->seccion }}</td>
                                 <td>{{ $book->ejemplar }}</td>
                                 <td>{{ $book->estado }}</td>

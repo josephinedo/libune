@@ -59,7 +59,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('books.bookForm')->with(['book' => $book]);
     }
 
     /**
@@ -71,7 +71,9 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        Book::where('id', $book->id)->update($request->except('_token', '_method'));
+      
+        return redirect()->route('book.show', $book->id);
     }
 
     /**
@@ -82,6 +84,20 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        $book->delete();
+        return redirect()->route('book.index');
+    }
+
+    public function agregaAutor(Request $request)
+    {
+        $book = Book::find($request->book_id);
+
+        $arrSincroniza = array();
+        foreach ($request->book_id as $autorID) {
+            $arrSincroniza += [$autorID];
+        }
+        $book->autores()->sync($arrSincroniza);
+
+        return redirect()->route('book.show', $book->id);
     }
 }
