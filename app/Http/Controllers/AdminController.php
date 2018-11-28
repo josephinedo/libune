@@ -14,7 +14,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        $admins = Admin::all();
+        return view('admins.adminIndex', compact('admins'));
     }
 
     /**
@@ -24,7 +25,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admins.adminForm');
     }
 
     /**
@@ -35,7 +36,8 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Admin::create($request->all());
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -46,7 +48,7 @@ class AdminController extends Controller
      */
     public function show(Admin $admin)
     {
-        //
+        return view('admins.adminShow', compact('admin'));
     }
 
     /**
