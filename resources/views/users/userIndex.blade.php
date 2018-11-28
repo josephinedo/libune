@@ -24,6 +24,7 @@
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Correo</th>
+                        <th>Código</th>
                         <th>Acciones</th>
                     </thead>
                     <tbody>
@@ -32,6 +33,7 @@
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
+                                <td>{{ $user->codigo }}</td>
                                 <td>
                                     {!! Form::open(['route' => ['user.destroy', $user->id], 'method' => 'DELETE']) !!}
                                     {!! Form::submit('Eliminar', ['class' => 'btn btn-sm btn-danger']) !!}

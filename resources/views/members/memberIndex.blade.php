@@ -3,7 +3,7 @@
 @section('contenido')
 <div class="app-title">
     <div>
-        <h1><i class="fa fa-dashboard"></i> Listado de Administradores</h1>
+        <h1><i class="fa fa-dashboard"></i> Listado de Miembros</h1>
     </div>
 </div>
 <div class="row">
@@ -11,11 +11,11 @@
         <div class="card card-shadow mb-4">
             <div class="card-header border-0">
                 <div class="custom-title-wrap bar-primary">
-                    <div class="custom-title">Listado Admistradores</div>
+                    <div class="custom-title">Miembros</div>
                 </div>
             </div>
             <div class="card-body">
-                <table class="table" id="admins">
+                <table class="table" id="members">
                     <thead>
                         <th>ID</th>
                         <th>Nombre</th>
@@ -23,14 +23,14 @@
                         <th>Código</th>
                     </thead>
                     <tbody>
-                        @foreach($admins as $admin)
+                        @foreach($members as $member)
                             <tr>
                                 <td>
-                                  <a class="btn btn-sm btn-primary" href="{{ route('admin.show', $admin->id) }}">{{ $admin->id }}</a>
+                                  <a class="btn btn-sm btn-primary" href="{{ route('member.show', $member->id) }}">{{ $member->id }}</a>
                                 </td>
-                                <td>{{ $admin->nombre }}</td>
-                                <td>{{ $admin->email }}</td>
-                                <td>{{ $admin->codigo }}</td>
+                                <td>{{ $member->nombre }}</td>
+                                <td>{{ $member->email }}</td>
+                                <td>{{ $member->codigo }}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -48,7 +48,7 @@
     <!-- Implementa DataTable -->
     <script>
         $(document).ready(function () {
-            $('#admins').DataTable();
+            $('#members').DataTable();
         });
     </script>
 @stop

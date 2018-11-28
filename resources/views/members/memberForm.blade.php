@@ -3,7 +3,7 @@
 @section('contenido')
 <div class="app-title">
     <div>
-        <h1><i class="fa fa-dashboard"></i> Nuevo Administrador</h1>
+        <h1><i class="fa fa-dashboard"></i> Nuevo Miembro</h1>
     </div>
 </div>
 <div class="row">
@@ -11,21 +11,21 @@
     <div class="tile">
       @include('partials.formErrors')
 
-      @if(isset($admin))
-        {!! Form::model($admin, ['route' => ['admin.update', $admin->id], 'method' => 'PATCH']) !!}
+      @if(isset($member))
+        {!! Form::model($member, ['route' => ['member.update', $member->id], 'method' => 'PATCH']) !!}
       @else
-        {!! Form::open(['route' => 'admin.store']) !!}
+        {!! Form::open(['route' => 'member.store']) !!}
       @endif
         <div class="form-group">
-          <label for="admin">Nombre</label>
+          <label for="member">Nombre</label>
           {!! Form::text('nombre', null, ['class' => 'form-control']); !!}
         </div>
         <div class="form-group">
-          <label for="admin">Email</label>
+          <label for="member">Email</label>
           {!! Form::text('email', null, ['class' => 'form-control']); !!}
         </div>
         <div class="form-group">
-          <label for="admin">Código</label>
+          <label for="member">Código</label>
           {!! Form::text('codigo', null, ['class' => 'form-control']); !!}
         </div>
         

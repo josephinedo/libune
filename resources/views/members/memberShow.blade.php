@@ -4,7 +4,7 @@
 
 <div class="app-title">
     <div>
-        <h1><i class="fa fa-dashboard"></i> Info de Administrador</h1>
+        <h1><i class="fa fa-dashboard"></i> Info de miembro</h1>
     </div>
 </div>
 <div class="row">
@@ -12,7 +12,7 @@
         <div class="card card-shadow mb-4">
             <div class="card-header border-0">
                 <div class="custom-title-wrap bar-primary">
-                    <div class="custom-title">Info {{ $admin->nombre }}</div>
+                    <div class="custom-title">Info {{ $member->nombre }}</div>
                 </div>
                 <div class="card-body">
                     <table class="table">
@@ -23,9 +23,9 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{ $admin->nombre }}</td>
-                                <td>{{ $admin->email }}</td>
-                                <td>{{ $admin->codigo }}</td>
+                                <td>{{ $member->nombre }}</td>
+                                <td>{{ $member->email }}</td>
+                                <td>{{ $member->codigo }}</td>
                             </tr>
                         </tbody>
                     </table>

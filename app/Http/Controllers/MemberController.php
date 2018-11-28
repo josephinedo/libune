@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Admin;
+use App\Member;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class MemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $admins = Admin::all();
-        return view('admins.adminIndex', compact('admins'));
+        $members = Member::all();
+        return view('members.memberIndex', compact('members'));
     }
 
     /**
@@ -25,7 +25,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admins.adminForm');
+        return view('members.memberForm');
     }
 
     /**
@@ -36,28 +36,28 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        Admin::create($request->all());
-        return redirect()->route('admin.index');
+        Mmeber::create($request->all());
+        return redirect()->route('member.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Admin  $admin
+     * @param  \App\member  $member
      * @return \Illuminate\Http\Response
      */
-    public function show(Admin $admin)
+    public function show(Member $member)
     {
-        return view('admins.adminShow', compact('admin'));
+        return view('members.memberShow', compact('member'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Admin  $admin
+     * @param  \App\member  $member
      * @return \Illuminate\Http\Response
      */
-    public function edit(Admin $admin)
+    public function edit(Member $member)
     {
         //
     }
@@ -66,10 +66,10 @@ class AdminController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Admin  $admin
+     * @param  \App\member  $member
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request, Member $member)
     {
         //
     }
@@ -77,10 +77,10 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Admin  $admin
+     * @param  \App\member  $member
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admin $admin)
+    public function destroy(Member $member)
     {
         //
     }
