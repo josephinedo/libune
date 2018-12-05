@@ -45,6 +45,8 @@
           {!! Form::text('edicion', null, ['class' => 'form-control']); !!}
         </div>
 
+        
+
         <div class="tile-footer">
           <button class="btn btn-primary" type="submit">Aceptar</button>
         </div>

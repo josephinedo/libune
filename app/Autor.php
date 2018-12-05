@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Autor extends Model
 {
-    protected $fillable = ['id', 'nombre', 'apellido'];
+    protected $fillable = ['nombre', 'apellido'];
 
     public $timestamps = false;
 

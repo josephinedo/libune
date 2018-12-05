@@ -14,13 +14,14 @@ class CreateBooksTable extends Migration
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
-            $table->increments('id');            
+            $table->increments('id');
+            $table->integer('user_id');
             $table->string('titulo');
             $table->string('autor');
             $table->string('seccion');
             $table->unsignedInteger('ejemplar');
             $table->string('estado');
-            $table->string('codigo',10);
+            $table->string('codigo');
             $table->year('edicion');
             $table->timestamps();
         });
