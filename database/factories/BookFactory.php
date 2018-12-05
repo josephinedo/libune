@@ -7,12 +7,14 @@ $factory->define(App\Book::class, function (Faker $faker) {
     	'user_id' => function () {
             return factory(App\User::class)->create()->id;
         },
+        'book_autor_id' => function () {
+            return factory(App\Autor::class)->create()->id;
+        },
 		'titulo' => $faker->sentence(2),
-        'autor' => $faker->name(),
         'seccion' => 'Literatura',
         'ejemplar' => $faker->randomNumber(1),
         'estado' => $faker->word(),
-        'codigo' => $faker->word(),
+        'codigo' => $faker->word(8),
         'edicion' => $faker->year($max = 'now'),
     ];
 });

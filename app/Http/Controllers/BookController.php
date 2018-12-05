@@ -36,8 +36,20 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+          'titulo' => 'required|min:4',
+          'seccion' => 'required|min:4',
+          'ejemplar' => 'required|integer',
+          'estado' => 'required|min:3',
+          'codigo' => 'required|min:8',
+          'edicion' => 'required',
+        ]);
+
+        $request->merge(['user_id' => \Auth::id()]);
+
         Book::create($request->all());
-        return redirect()->route('book.index');
+        return redirect()->route('book.index')
+        ->with(['mensaje' => 'Libro creado con éxito', 'alert-class' => 'alert-success']);
     }
 
     /**

@@ -41,11 +41,9 @@
           {!! Form::text('codigo', null, ['class' => 'form-control']); !!}
         </div>
         <div class="form-group">
-          <label for="book">Edición</label>
+          <label for="book">Edición (año) </label>
           {!! Form::text('edicion', null, ['class' => 'form-control']); !!}
         </div>
-
-        
 
         <div class="tile-footer">
           <button class="btn btn-primary" type="submit">Aceptar</button>
