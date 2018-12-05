@@ -29,6 +29,12 @@
                             </tr>
                         </tbody>
                     </table>
+                    <!-- Eliminar registro -->
+                    <form action="{{ route('member.destroy', $member->id) }}" method="POST">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
                 </div>
             </div>
         </div>

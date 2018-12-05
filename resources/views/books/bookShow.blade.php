@@ -37,6 +37,12 @@
                             </tr>
                         </tbody>
                     </table>
+                    <!-- Eliminar registro -->
+                    <form action="{{ route('book.destroy', $book->id) }}" method="POST">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
                 </div>
             </div>
         </div>
